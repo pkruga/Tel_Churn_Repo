@@ -69,13 +69,15 @@ Exploratory Data Analysis
 
 **Objective**: The objective of the Exploratory Data Analysis (EDA) is to understand the structure, distribution, and key characteristics of the churn dataset to inform subsequent data preprocessing and modeling steps.
 
-Summary:
+**Summary**:
 
 1. Data Overview:
-  Counted missing values in each column.
 
-2. Distribution Analysis:
-    Created histograms for numerical features to visualize their distributions.
+Counted missing values in each column.
+
+3. Distribution Analysis:
+
+   Created histograms for numerical features to visualize their distributions.
 
 ![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/c4a4f344-4a5d-4ab2-a056-b3beeae7b351)
 
@@ -83,15 +85,20 @@ Summary:
 ![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/bb0b41b5-8e1b-499e-a2c1-b684e8146fa5)
 
 3. Correlation and Relationships:
-    Constructed a correlation heatmap to identify relationships between numerical features.
+
+   Constructed a correlation heatmap to identify relationships between numerical features.
 
 ![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/72166649-e19e-4cfb-90bc-ec3348f67c90)
 
    Generated pairplots to explore potential feature interactions.
 
 4. Categorical Data Analysis:
+
     Provided value counts for categorical columns to understand category distributions.
-    Plotted a count plot for the target variable (Churn) to see churn rates.
+
+   Plotted a count plot for the target variable (Churn) to see churn rates.
+
+![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/8613e82c-9b33-4474-a8b2-c6be59167313)
 
 ## Features
 
@@ -110,23 +117,74 @@ The key features used in the model are:
 
 **Random Forest Classifier**: An ensemble method that uses multiple decision trees to improve prediction accuracy.
 
+Random Forest Classifier was chosen for accuracy and high cross validation score the model was fine tuned using hyperparameters and the final model was utilize in predictions of our churn patterns
+
 **SMOTE**: Synthetic Minority Over-sampling Technique to handle class imbalance.
 
-##Evaluation Metrics
+## Evaluation Metrics
 
 The models were evaluated using:
 
+**Cross Validation Score**: overall model performance.
+
+**Confusion Matrix**: The overall number of correct preditions of our classification model
+
 **Accuracy**: Overall correctness of the model.
+
 **ROC AUC**: Area under the receiver operating characteristic curve, indicating the model's ability to distinguish between classes.
+
 **Classification Report**: Includes precision, recall, and F1-score.
 
-##Results
-The tuned Random Forest model achieved:
+## Results
+The first Random Forest Classifier achieved:
+
+Accuracy: 94.6%
+
+ROC AUC: 0.95
+
+The tuned Random Forest classifier achieved:
 
 Accuracy: 93.6%
 
 ROC AUC: 0.926
 
 Precision, Recall, F1-score: High accuracy for predicting customers who stay, moderate for those who churn.
+
+The refined model accuracy was assesed using the confusion matrix.
+
+![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/698c9d22-c850-4e37-a739-0ab8c360f0be)
+
+From this confusion matrix, we can derive the following information:
+
+True Negatives: 280
+False Positives: 0
+False Negatives: 42
+True Positives: 12
+ 
+Important Features were also assesed to check for their influence on the overall model 
+
+Feature Importance Values:
+account length           0.063971
+area code                0.014705
+international plan       0.005720
+voice mail plan          0.007338
+number vmail messages    0.027434
+                           ...   
+state_VT                 0.003142
+state_WA                 0.002235
+state_WI                 0.002889
+state_WV                 0.003088
+state_WY                 0.002620
+
+![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/8d9564d3-6dde-4830-9f2d-b9b47f797cc2)
+
+**Total Day Minutes**: More minutes used during the day means customers are less likely to leave.
+
+**International Plan**: Customers with international plans are more likely to leave.
+
+**Voice Mail Plan**: The presence of a voicemail plan also affects churn.
+
+**Account Length**: Long-term customers are less likely to leave.
+
 
 
