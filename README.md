@@ -180,17 +180,14 @@ Feature Importance Values:
 * area code                0.014705
 * international plan       0.005720
 * voice mail plan          0.007338
-* number vmail messages    0.027434
-
-                           ...   
-
+* number vmail messages    0.027434  
 * state_VT                 0.003142
 * state_WA                 0.002235
 * state_WI                 0.002889
 * state_WV                 0.003088
 * state_WY                 0.002620
 
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/8d9564d3-6dde-4830-9f2d-b9b47f797cc2)
+![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/a5098ac0-5ac5-4bce-861f-83fee694d413)
 
 **Total Day Minutes**: More minutes used during the day means customers are less likely to leave.
 
