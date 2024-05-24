@@ -161,6 +161,8 @@ Stock images from https://depositphotos.com/photos/telecommunications.html
 
 Dataset sourced from https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset/code
 
+## Blogpost
+
 
 
 
