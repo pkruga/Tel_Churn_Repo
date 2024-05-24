@@ -1,4 +1,8 @@
 # Customer Churn Prediction
+
+![depositphotos_25360821-stock-photo-communication-towers](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/c26a625f-3c66-4d68-b38e-477802bceade)
+
+
 This project aims to predict customer churn using various machine learning techniques. The goal is to identify key features that contribute to customer churn and develop models to accurately predict churn rates.
 
 Table of Contents
@@ -13,8 +17,11 @@ Table of Contents
 * License
 
 ## Overview
+
 Customer churn prediction is critical for businesses to retain customers and improve services. This project uses a dataset to analyze and predict customer churn through feature selection and model tuning.
+
 ### Introduction
+
 The SyriaTel Customer Churn project aims to leverage machine learning techniques for analyzing telecommunications data and customer behavior patterns. Let’s delve into the details:
 
 **Project Overview**: The project focuses on accurately identifying potential churners among SyriaTel’s customer base. By employing machine learning techniques, the goal is to predict customers who are at risk of churning. This enables SyriaTel to implement targeted strategies and interventions to retain those customers, mitigate revenue loss, and enhance overall business performance and profitability.
@@ -156,10 +163,10 @@ The refined model accuracy was assesed using the confusion matrix.
 
 From this confusion matrix, we can derive the following information:
 
-True Negatives: 280
-False Positives: 0
-False Negatives: 42
-True Positives: 12
+* True Negatives: 280
+* False Positives: 0
+* False Negatives: 42
+* True Positives: 12
  
 Important Features were also assesed to check for their influence on the overall model 
 
