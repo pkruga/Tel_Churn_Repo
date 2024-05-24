@@ -139,13 +139,13 @@ While the best model shows improvement compared to previous versions, further tu
    - Create special offers or messages for customers who might be thinking of leaving.
 
 ## 10. Train Your Team
-    - Make sure everyone who talks to customers knows how to help and make them happy.
+  - Make sure everyone who talks to customers knows how to help and make them happy.
 
 By following these suggestions, the company can reduce the chances of losing customers, make them happier, and grow its business in the long run.
 
 ## Future Work
 
-Potential areas for future work, feature engineering, trying different a suggestion to try decision tree classifier, more model refinement can be attemmpted.
+Potential areas for future work, feature engineering,  try decision tree classifier, more model refinement can be attemmpted.
 
 ## Dependencies
 
