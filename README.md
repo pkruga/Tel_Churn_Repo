@@ -2,7 +2,6 @@
 
 ![depositphotos_25360821-stock-photo-communication-towers](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/c26a625f-3c66-4d68-b38e-477802bceade)
 
-
 This project aims to predict customer churn using various machine learning techniques. The goal is to identify key features that contribute to customer churn and develop models to accurately predict churn rates.
 
 Table of Contents
@@ -50,27 +49,27 @@ In total the preliminary data had 21 columns and 3333 data values.
 
 Data collected was as follows
 
- 0  state : Name of State where account holder resides
- 1   account length  : Period of account registration  
- 2   area code : Area code of account holder               
- 3   phone number : telephone number of account holder           
- 4   international plan : whether holder has an international plan     
- 5   voice mail plan : whether holder has a voicemail plan        
- 6   number vmail messages : how many voicemail messages they've left in the period
- 7   total day minutes : how many minutes have they called in the day time hours.      
- 8   total day calls : how many calls they placed in the day time hours         
- 9   total day charge : how much money they spent calling during day time hours     
- 10  total eve minutes : how many calls they placed in the evening hours       
- 11  total eve calls : how many calls they placed in the evening hours         
- 12  total eve charge : how much money they spent calling during evening hours       
- 13  total night minutes : how many minutes have they called in the night time hours    
- 14  total night calls :  how many calls they placed in the night time hours       
- 15  total night charge : how much money they spent calling during night time hours     
- 16  total intl minutes : how many minutes were spent on international calls     
- 17  total intl calls : how many calls were placed to international lines       
- 18  total intl charge : how much mony they spent making international calls      
- 19  customer service calls : how often do they contact customer service   
- 20  churn : if the customer has left rescently represented by true or false.                  
+* 0   **state** : Name of State where account holder resides
+* 1   **account length**  : Period of account registration  
+* 2   **area code** : Area code of account holder               
+* 3   **phone number** : telephone number of account holder           
+* 4   **international plan** : whether holder has an international plan     
+* 5   **voice mail plan** : whether holder has a voicemail plan        
+* 6   **number vmail messages** : how many voicemail messages they've left in the period
+* 7   **total day minutes** : how many minutes have they called in the day time hours.      
+* 8   **total day calls** : how many calls they placed in the day time hours         
+* 9   **total day charge** : how much money they spent calling during day time hours     
+* 10  **total eve minutes** : how many calls they placed in the evening hours       
+* 11  **total eve calls** : how many calls they placed in the evening hours         
+* 12  **total eve charge** : how much money they spent calling during evening hours       
+* 13  **total night minutes** : how many minutes have they called in the night time hours    
+* 14  **total night calls** :  how many calls they placed in the night time hours       
+* 15  **total night charge** : how much money they spent calling during night time hours     
+* 16  **total intl minutes** : how many minutes were spent on international calls     
+* 17  **total intl calls** : how many calls were placed to international lines       
+* 18  **total intl charge** : how much mony they spent making international calls      
+* 19  **customer service calls** : how often do they contact customer service   
+* 20  **churn** : if the customer has left rescently represented by true or false.                  
 
 Exploratory Data Analysis
 
@@ -82,7 +81,7 @@ Exploratory Data Analysis
 
 Counted missing values in each column.
 
-3. Distribution Analysis:
+2. Distribution Analysis:
 
    Created histograms for numerical features to visualize their distributions.
 
@@ -101,7 +100,7 @@ Counted missing values in each column.
 
 4. Categorical Data Analysis:
 
-    Provided value counts for categorical columns to understand category distributions.
+   Provided value counts for categorical columns to understand category distributions.
 
    Plotted a count plot for the target variable (Churn) to see churn rates.
 
@@ -145,15 +144,15 @@ The models were evaluated using:
 ## Results
 The first Random Forest Classifier achieved:
 
-Accuracy: 94.6%
+**Accuracy**: 94.6%
 
-ROC AUC: 0.95
+**ROC AUC**: 0.95
 
 The tuned Random Forest classifier achieved:
 
-Accuracy: 93.6%
+**Accuracy**: 93.6%
 
-ROC AUC: 0.926
+**ROC AUC**: 0.926
 
 Precision, Recall, F1-score: High accuracy for predicting customers who stay, moderate for those who churn.
 
@@ -171,17 +170,20 @@ From this confusion matrix, we can derive the following information:
 Important Features were also assesed to check for their influence on the overall model 
 
 Feature Importance Values:
-account length           0.063971
-area code                0.014705
-international plan       0.005720
-voice mail plan          0.007338
-number vmail messages    0.027434
+
+* account length           0.063971
+* area code                0.014705
+* international plan       0.005720
+* voice mail plan          0.007338
+* number vmail messages    0.027434
+
                            ...   
-state_VT                 0.003142
-state_WA                 0.002235
-state_WI                 0.002889
-state_WV                 0.003088
-state_WY                 0.002620
+
+* state_VT                 0.003142
+* state_WA                 0.002235
+* state_WI                 0.002889
+* state_WV                 0.003088
+* state_WY                 0.002620
 
 ![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/8d9564d3-6dde-4830-9f2d-b9b47f797cc2)
 
