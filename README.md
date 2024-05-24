@@ -142,6 +142,11 @@ The models were evaluated using:
 **Classification Report**: Includes precision, recall, and F1-score.
 
 ## Results
+
+The model is accurate (93.6%) and can effectively predict who will stay and who will leave.
+
+It does a great job of identifying customers who will stay but is less accurate for those who will leave.
+
 The first Random Forest Classifier achieved:
 
 **Accuracy**: 94.6%
@@ -194,6 +199,24 @@ Feature Importance Values:
 **Voice Mail Plan**: The presence of a voicemail plan also affects churn.
 
 **Account Length**: Long-term customers are less likely to leave.
+
+## Customer Churn Patterns:
+
+**High Usage**: Customers using more minutes and making more calls are less likely to leave.
+
+**Service Issues**: Issues with international and voicemail plans contribute to customers leaving.
+
+**Long-Term Loyalty**: Long-term customers show more loyalty. Business Insights:
+
+**Retention Focus**: Focus on keeping customers with international plans or low usage.
+
+**Improve Services**: Enhance international and voicemail services to reduce churn. Loyalty Programs: Encourage longer-term commitments from new customers.
+
+**Conclusion**
+
+By understanding these key factors, businesses can better target efforts to keep customers from leaving, improving overall retention.
+
+
 
 
 
