@@ -1,217 +1,167 @@
-# Customer Churn Prediction
+# SyriaTel Customer Churn Analysis
 
 ![depositphotos_25360821-stock-photo-communication-towers](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/c26a625f-3c66-4d68-b38e-477802bceade)
 
-This project aims to predict customer churn using various machine learning techniques. The goal is to identify key features that contribute to customer churn and develop models to accurately predict churn rates.
+## Introduction
 
-Table of Contents
-* Overview
-* Dataset
-* Features
-* Models Used
-* Evaluation Metrics
-* Results
-* How to Run
-* Contributing
-* License
+This project aims to leverage machine learning techniques to analyze telecommunications data and customer behavior patterns at SyriaTel, a telecommunications company. The primary objective is to accurately identify potential churners among SyriaTel's customer base, enabling the company to implement targeted strategies and interventions to retain those customers, mitigate revenue loss, and enhance overall business performance and profitability.
 
-## Overview
+## Problem Statement
 
-Customer churn prediction is critical for businesses to retain customers and improve services. This project uses a dataset to analyze and predict customer churn through feature selection and model tuning.
+SyriaTel aims to mitigate revenue loss and enhance business performance by identifying customers at risk of churning. By leveraging machine learning techniques, the project focuses on predicting customer churn based on telecommunications data and behavior patterns.
 
-### Introduction
+## Objectives
 
-The SyriaTel Customer Churn project aims to leverage machine learning techniques for analyzing telecommunications data and customer behavior patterns. Let’s delve into the details:
+1. **Customer Churn Prediction**: Predict whether a customer will churn or not based on their telecommunications data and behavior patterns.
+2. **Model Evaluation and Selection**: Evaluate and select the best-performing machine learning model for churn prediction.
+3. **Model Interpretation**: Understand how the selected model makes predictions and which features are most important in predicting churn.
+4. **Model Fine-Tuning**: Optimize the selected model's hyperparameters to improve its performance.
 
-**Project Overview**: The project focuses on accurately identifying potential churners among SyriaTel’s customer base. By employing machine learning techniques, the goal is to predict customers who are at risk of churning. This enables SyriaTel to implement targeted strategies and interventions to retain those customers, mitigate revenue loss, and enhance overall business performance and profitability.
+## Data
 
-### Problem Statement:
+The project utilizes a dataset containing telecommunications data and customer behavior patterns. The dataset includes features such as total day minutes, total eve minutes, total night minutes, international plan, customer service calls, and more. These features will be used to train and evaluate machine learning models for predicting customer churn.
 
-SyriaTel, a telecommunications company, aims to mitigate revenue loss and enhance business performance by identifying customers at risk of churning. Leveraging machine learning techniques, the project focuses on predicting customer churn based on telecommunications data and behavior patterns.
+## Methodology
 
-### Objectives
+1. **Data Loading and Exploratory Data Analysis (EDA)**:
+  - Import necessary libraries.
+  - Load the dataset from a CSV file.
+  - Explore data structure, distribution, and key characteristics.
+  - Perform data cleaning and preprocessing.
 
-**Customer Churn Prediction**: Predicting whether a customer will churn or not based on their telecommunications data and behavior patterns.
 
-**Model Evaluation and Selection**: Evaluating and selecting the best-performing machine learning model for churn prediction.
+2. **Data Preprocessing**:
+  - Handle missing values, if any.
+  - Encode categorical features, if necessary.
+  - Split the dataset into training and testing sets.
 
-**Model Interpretation**: Understanding how the selected model makes predictions and which features are most important in predicting churn.
+3. **Model Training and Evaluation**:
+  - Train and evaluate multiple machine learning models (e.g., logistic regression, decision trees, random forests, gradient boosting) on the training set.
+  - Evaluate model performance using appropriate metrics (e.g., accuracy, precision, recall, F1-score, area under the ROC curve).
+  - Select the best-performing model based on the evaluation metrics.
 
-**Model Fine-Tuning**: Optimizing the selected model's hyperparameters to improve its performance.
+4. **Model Interpretation**:
+  - Analyze the feature importance scores of the selected model.
+  - Understand how the model makes predictions and which features contribute the most to predicting churn.
 
-## Dataset
+5. **Model Fine-Tuning**:
+  - Optimize the selected model's hyperparameters using techniques like grid search or random search to improve its performance.
+  - Explore techniques like SMOTE (Synthetic Minority Over-sampling Technique) to handle class imbalance.
 
-Sourced from Kaggle https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset/data
-
-The dataset contains customer information of telephone records kept by SyriaTel including account length, usage details, service plans, and whether the customer churned.
-
-In total the preliminary data had 21 columns and 3333 data values.
-
-Data collected was as follows
-
-* 0   **state** : Name of State where account holder resides
-* 1   **account length**  : Period of account registration  
-* 2   **area code** : Area code of account holder               
-* 3   **phone number** : telephone number of account holder           
-* 4   **international plan** : whether holder has an international plan     
-* 5   **voice mail plan** : whether holder has a voicemail plan        
-* 6   **number vmail messages** : how many voicemail messages they've left in the period
-* 7   **total day minutes** : how many minutes have they called in the day time hours.      
-* 8   **total day calls** : how many calls they placed in the day time hours         
-* 9   **total day charge** : how much money they spent calling during day time hours     
-* 10  **total eve minutes** : how many calls they placed in the evening hours       
-* 11  **total eve calls** : how many calls they placed in the evening hours         
-* 12  **total eve charge** : how much money they spent calling during evening hours       
-* 13  **total night minutes** : how many minutes have they called in the night time hours    
-* 14  **total night calls** :  how many calls they placed in the night time hours       
-* 15  **total night charge** : how much money they spent calling during night time hours     
-* 16  **total intl minutes** : how many minutes were spent on international calls     
-* 17  **total intl calls** : how many calls were placed to international lines       
-* 18  **total intl charge** : how much mony they spent making international calls      
-* 19  **customer service calls** : how often do they contact customer service   
-* 20  **churn** : if the customer has left rescently represented by true or false.                  
-
-Exploratory Data Analysis
-
-**Objective**: The objective of the Exploratory Data Analysis (EDA) is to understand the structure, distribution, and key characteristics of the churn dataset to inform subsequent data preprocessing and modeling steps.
-
-**Summary**:
-
-1. Data Overview:
-
-Counted missing values in each column.
-
-2. Distribution Analysis:
-
-   Created histograms for numerical features to visualize their distributions.
-
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/c4a4f344-4a5d-4ab2-a056-b3beeae7b351)
-
-   Used boxplots to identify outliers.
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/bb0b41b5-8e1b-499e-a2c1-b684e8146fa5)
-
-3. Correlation and Relationships:
-
-   Constructed a correlation heatmap to identify relationships between numerical features.
-
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/72166649-e19e-4cfb-90bc-ec3348f67c90)
-
-   Generated pairplots to explore potential feature interactions.
-
-4. Categorical Data Analysis:
-
-   Provided value counts for categorical columns to understand category distributions.
-
-   Plotted a count plot for the target variable (Churn) to see churn rates.
-
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/8613e82c-9b33-4474-a8b2-c6be59167313)
-
-## Features
-
-Our target variable was "Churn" which against which we used selected features to make our Classification models.
-
-The key features used in the model are:
-
-* Total day minutes
-* International plan
-* Voice mail plan
-* Account length
-* Total day calls
-* Number of voicemail messages
-
-## Models Used
-
-**Random Forest Classifier**: An ensemble method that uses multiple decision trees to improve prediction accuracy.
-
-Random Forest Classifier was chosen for accuracy and high cross validation score the model was fine tuned using hyperparameters and the final model was utilize in predictions of our churn patterns
-
-**SMOTE**: Synthetic Minority Over-sampling Technique to handle class imbalance.
-
-## Evaluation Metrics
-
-The models were evaluated using:
-
-**Cross Validation Score**: overall model performance.
-
-**Confusion Matrix**: The overall number of correct preditions of our classification model
-
-**Accuracy**: Overall correctness of the model.
-
-**ROC AUC**: Area under the receiver operating characteristic curve, indicating the model's ability to distinguish between classes.
-
-**Classification Report**: Includes precision, recall, and F1-score.
+6. **Deployment and Monitoring**:
+  - Develop a strategy for deploying the trained model into a production environment.
+  - Implement monitoring and maintenance procedures to ensure the model's performance over time.
 
 ## Results
 
-The model is accurate (93.6%) and can effectively predict who will stay and who will leave.
+### Model Performance
 
-It does a great job of identifying customers who will stay but is less accurate for those who will leave.
+After evaluating multiple models, the best-performing model was a Tuned Random Forest with SMOTE (Synthetic Minority Over-sampling Technique) applied to handle class imbalance. The key performance metrics of this model are as follows:
 
-The first Random Forest Classifier achieved:
+- **Accuracy Score**: 0.902 (90.2%)
+- **Confusion Matrix**:
+  - True Positives (Churned and correctly predicted): 92
+  - True Negatives (Not churned and correctly predicted): 810
+  - False Positives (Not churned but incorrectly predicted as churned): 45
+  - False Negatives (Churned but incorrectly predicted as not churned): 53
+- **Classification Report**:
+  - Precision for Churn Class: 0.67
+  - Recall for Churn Class: 0.63
+  - F1-score for Churn Class: 0.65
 
-**Accuracy**: 94.6%
+This model demonstrated a reasonable balance between precision and recall in identifying churn cases, which is crucial for SyriaTel to mitigate revenue loss and enhance business performance.
 
-**ROC AUC**: 0.95
+### Feature Importance
 
-The tuned Random Forest classifier achieved:
+The most influential features in predicting customer churn were:
 
-**Accuracy**: 93.6%
+1. Total Day Minutes
+2. Total Day Charge
+3. Customer Service Calls
+4. International Plan
+5. Total Eve Minutes
 
-**ROC AUC**: 0.926
+Features related to daytime usage (both minutes and charges) and customer service interactions were the most significant predictors of churn.
 
-Precision, Recall, F1-score: High accuracy for predicting customers who stay, moderate for those who churn.
+### Further Considerations
 
-The refined model accuracy was assesed using the confusion matrix.
+While the best model shows improvement compared to previous versions, further tuning and evaluation may still be necessary to optimize its performance and ensure it meets the project objectives effectively. Additional analysis, such as feature importance and model interpretation, can provide insights into how the model makes predictions and which features are most influential in identifying churn cases.
 
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/698c9d22-c850-4e37-a739-0ab8c360f0be)
+# Insights on Customer Churn
 
-From this confusion matrix, we can derive the following information:
+## Overview
 
-* True Negatives: 280
-* False Positives: 0
-* False Negatives: 42
-* True Positives: 12
- 
-Important Features were also assesed to check for their influence on the overall model 
+- **Daytime Usage Matters**: Customers who spend more time and money on daytime calls are more likely to churn. Also, those who make frequent customer service calls are at higher risk of leaving.
+  
+- **Evening Usage Patterns**: Evening call habits also impact churn prediction. High usage or charges during evening hours might indicate potential churn behavior.
+  
+- **International Usage**: Customers with significant international calling activity or charges may have different churn probabilities.
+  
+- **Account Length**: Longer-tenured customers show different churn behaviors compared to newer subscribers.
 
-Feature Importance Values:
+## Model Performance
 
-* account length           0.063971
-* area code                0.014705
-* international plan       0.005720
-* voice mail plan          0.007338
-* number vmail messages    0.027434  
-* state_VT                 0.003142
-* state_WA                 0.002235
-* state_WI                 0.002889
-* state_WV                 0.003088
-* state_WY                 0.002620
+- The model correctly predicts churn or non-churn for about 90.2% of customers.
+  
+- Precision, recall, and F1-score provide more detailed insights into how well the model performs for churn and non-churn cases.
+  
+- The model predicts 912 customers as non-churners and 88 customers as churners.
 
-![image](https://github.com/pkruga/Tel_Churn_Repo/assets/91247293/a5098ac0-5ac5-4bce-861f-83fee694d413)
+- Overall, the model effectively predicts churn based on customer behavior. However, continuous refinement may be needed for better accuracy and understanding.
 
-**Total Day Minutes**: More minutes used during the day means customers are less likely to leave.
+# Recommendations
 
-**International Plan**: Customers with international plans are more likely to leave.
+## 1. Know Your Customers
+   - Split customers into groups based on their likelihood to leave and how they behave. This helps tailor efforts to keep them.
 
-**Voice Mail Plan**: The presence of a voicemail plan also affects churn.
+## 2. Stay Connected
+   - Reach out to customers before they think of leaving. Send them personalized messages, offers, and solve problems quickly.
 
-**Account Length**: Long-term customers are less likely to leave.
+## 3. Make Services Better
+   - Focus on improving areas like customer service, especially if they're linked to churn.
 
-## Customer Churn Patterns:
+## 4. Offer Incentives
+   - Give discounts or rewards to customers who might leave to keep them around.
 
-**High Usage**: Customers using more minutes and making more calls are less likely to leave.
+## 5. Listen and Learn
+   - Ask customers what they think and use their feedback to make things better.
 
-**Service Issues**: Issues with international and voicemail plans contribute to customers leaving.
+## 6. Keep Getting Better
+   - Keep an eye on how well the churn prediction model works and find ways to make it even more accurate.
 
-**Long-Term Loyalty**: Long-term customers show more loyalty. Business Insights:
+## 7. Suggest More
+   - Offer customers other things they might like based on what they already use.
 
-**Retention Focus**: Focus on keeping customers with international plans or low usage.
+## 8. Make Things Easy
+   - Make sure customers have a smooth experience whenever they interact with your company.
 
-**Improve Services**: Enhance international and voicemail services to reduce churn. Loyalty Programs: Encourage longer-term commitments from new customers.
+## 9. Stay in Touch
+   - Create special offers or messages for customers who might be thinking of leaving.
 
-**Conclusion**
+## 10. Train Your Team
+    - Make sure everyone who talks to customers knows how to help and make them happy.
 
-By understanding these key factors, businesses can better target efforts to keep customers from leaving, improving overall retention.
+By following these suggestions, the company can reduce the chances of losing customers, make them happier, and grow its business in the long run.
+
+## Future Work
+
+Potential areas for future work, feature engineering, trying different a suggestion to try decision tree classifier, more model refinement can be attemmpted.
+
+## Dependencies
+
+### Resources used
+
+* Google Colab (notebook)
+
+* Microsoft Powerpoint
+
+## Acknowledgments
+
+Stock images from https://depositphotos.com/photos/telecommunications.html
+
+Dataset sourced from https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset/code
+
+
 
 
 
